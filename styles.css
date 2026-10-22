@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #1c6238;
+}
+header, footer {
+    padding: 1rem;
+    text-align: center;
+    background-color: #628e28;
+    /*background-color: #396a1d;*/
+    color: white;
+}
+header img {
+    max-width: 70px;
+    height: auto;
+}
+.main-nav {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+.main-nav li {
+    padding: 2px;
+}
+.main-nav a {
+    text-decoration: none;
+    color: white;
+}
+.pedigree-chart {
+    padding: 1rem;
+    margin: 0;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #a2bea6;
+    border-radius: 8px;
+    padding: 1rem;
+}
+form label {
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+}
+form input,
+form select {
+    padding: 0.65rem;
+    border: 1px solid #aab8c2;
+    border-radius: 5px;
+    font: inherit;
+    background-color: #fff;
+    box-sizing: border-box;
+    width: 100%;
+    color: #3e673b;
+}
+form input:focus,
+form select:focus {
+    outline: 2px solid #1c6238;
+    outline-offset: 1px;
+}
+#formButton {
+    padding: 1em;
+    margin: 0;
+    margin-top: 15px;
+    background-color:#628e28;
+    color: white;
+}
+#main-content {
+    padding: 1rem;
+    margin: 0;
+} 
+@media (min-width: 600px) {
+
+}

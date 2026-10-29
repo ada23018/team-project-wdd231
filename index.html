@@ -1,6 +1,7 @@
 <!-- https://ada23018.github.io/team-project-wdd231/ -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
 </head>
+
 <body>
     <header>
         <img src="images/tree.png" alt="tree logo">
@@ -23,7 +25,64 @@
         </nav>
     </header>
     <main id="main-content" role="main">
-
+        <section class="dashboard">
+            <div class="card stats-card">
+                <h2>Family Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h3 id="totalPeople">0</h3>
+                        <p>People</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3 id="totalGenerations">0</h3>
+                        <p>Generations</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3 id="totalGroups">0</h3>
+                        <p>Groups</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3 id="totalCountries">0</h3>
+                        <p>Countries</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Pedigree Preview</h2>
+                <div class="tree-preview">
+                    <div class="tree-level">
+                        <div class="tree-person">You</div>
+                    </div>
+                    <div class="tree-level">
+                        <div class="tree-person">Father</div>
+                        <div class="tree-person">Mother</div>
+                    </div>
+                    <div class="tree-level">
+                        <div class="tree-person">GF</div>
+                        <div class="tree-person">GM</div>
+                        <div class="tree-person">GF</div>
+                        <div class="tree-person">GM</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Heritage Estimate</h2>
+                <div class="chart-container">
+                    <div id="donutChart" class="donut-chart">
+                        <div class="donut-center">
+                            Heritage
+                        </div>
+                    </div>
+                    <ul id="heritageLegend">
+                        <li>United States - 40%</li>
+                        <li>Germany - 30%</li>
+                        <li>Ireland - 20%</li>
+                        <li>England - 10%</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
+
 </html>

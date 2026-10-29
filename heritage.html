@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
 </head>
+
 <body>
     <header>
         <img src="images/tree.png" alt="tree logo">
@@ -21,8 +23,20 @@
             </ul>
         </nav>
     </header>
-    <main id="main-content" role="main">
-        
+    <main id="main-content">
+        <section>
+            <h2>Countries of Origin</h2>
+            <div id="countryContainer" class="country-grid">
+            </div>
+        </section>
+        <dialog id="countryModal">
+            <h3 id="modalCountryName"></h3>
+            <p id="modalCountryInfo"></p>
+            <button id="closeModal">
+                Close
+            </button>
+        </dialog>
     </main>
 </body>
+
 </html>

@@ -5,17 +5,21 @@ body {
     line-height: 1.6;
     color: #1c6238;
 }
-header, footer {
+
+header,
+footer {
     padding: 1rem;
     text-align: center;
     background-color: #628e28;
     /*background-color: #396a1d;*/
     color: white;
 }
+
 header img {
     max-width: 70px;
     height: auto;
 }
+
 .main-nav {
     display: grid;
     grid-template-columns: 100px 100px 100px 100px 100px;
@@ -23,17 +27,21 @@ header img {
     list-style: none;
     padding: 0;
 }
+
 .main-nav li {
     padding: 2px;
 }
+
 .main-nav a {
     text-decoration: none;
     color: white;
 }
+
 .pedigree-chart {
     padding: 1rem;
     margin: 0;
 }
+
 form {
     display: flex;
     flex-direction: column;
@@ -41,11 +49,13 @@ form {
     border-radius: 8px;
     padding: 1rem;
 }
+
 form label {
     margin-top: 0.75rem;
     margin-bottom: 0.25rem;
     font-weight: bold;
 }
+
 form input,
 form select {
     padding: 0.65rem;
@@ -57,22 +67,144 @@ form select {
     width: 100%;
     color: #3e673b;
 }
+
 form input:focus,
 form select:focus {
     outline: 2px solid #1c6238;
     outline-offset: 1px;
 }
+
 #formButton {
     padding: 1em;
     margin: 0;
     margin-top: 15px;
-    background-color:#628e28;
+    background-color: #628e28;
     color: white;
 }
+
 #main-content {
     padding: 1rem;
     margin: 0;
-} 
-@media (min-width: 600px) {
+}
 
+.dashboard {
+    display: grid;
+    gap: 1rem;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.stat-box {
+    text-align: center;
+    background-color: #edf4e6;
+    border-radius: 10px;
+    padding: .5rem;
+}
+
+.tree-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tree-level {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tree-person {
+    background: #628e28;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.tree-person {
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.donut-chart {
+    width: 200px;
+    height: 200px;
+
+    background:
+        conic-gradient(#628e28 0% 40%,
+            #2F6F4F 40% 70%,
+            #8BAA5A 70% 90%,
+            #BFCC94 90% 100%);
+
+    border-radius: 50%;
+    position: relative;
+}
+
+.donut-center {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.country-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.country-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.country-card:hover {
+    background-color: #edf4e6;
+}
+
+@media (min-width: 768px) {
+
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .country-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

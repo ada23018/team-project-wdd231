@@ -3,7 +3,7 @@ const testPerson = {
     firstName: "John",
     lastName: "Smith",
     birthDate: "1880-01-23",
-    birthCounty:  "El Paso",
+    birthCounty: "El Paso",
     birthCity: "Colorado Springs",
     birthState: "CO",
     birthCountry: "United States",
@@ -31,9 +31,9 @@ if (relativeChoice && personFields) {
     https://www.w3schools.com/tags/att_hidden.asp
     */
     personFields.hidden = true;
-    relativeChoice.addEventListener("change", function() {
+    relativeChoice.addEventListener("change", function () {
         /*console.log(relativeChoice.value);*/
-        if (relativeChoice.value ==="new") {
+        if (relativeChoice.value === "new") {
             personFields.hidden = false;
         } else {
             personFields.hidden = true;
@@ -46,7 +46,7 @@ const personForm = document.querySelector("#add-person");
 /*https://www.w3schools.com/jsref/event_preventdefault.asp*/
 
 if (personForm) {
-    personForm.addEventListener("submit", function(event) {
+    personForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
         const person = {
@@ -71,7 +71,7 @@ const dateElement = document.querySelector("#todaysDate");
 
 if (dateElement) {
     const todaysDate = new Date();
-    dateElement.textContent = 
+    dateElement.textContent =
         `Printed: ${todaysDate.toLocaleDateString()}`;
 }
 
@@ -107,3 +107,72 @@ if (personContainer) {
 
     personContainer.innerHTML = createPersonTemplate(testPerson)
 }
+
+function loadDashboard() {
+    const people = JSON.parse(localStorage.getItem("people")) || [];
+    document.querySelector("#totalPeople").textContent =
+        people.length;
+    document.querySelector("#totalGenerations").textContent = 4;
+    document.querySelector("#totalGroups").textContent = 1;
+    const countries = new Set();
+    people.forEach(person => {
+        if (person.birthCountry) {
+            countries.add(person.birthCountry);
+        }
+    });
+    document.querySelector("#totalCountries").textContent =
+        countries.size;
+}
+if (document.querySelector("#totalPeople")) {
+    loadDashboard();
+}
+
+async function loadHeritageCountries() {
+    const response =
+        await fetch("data/countries.json");
+    const countries =
+        await response.json();
+    const container =
+        document.querySelector("#countryContainer");
+    if (!container) return;
+    countries.forEach(country => {
+        const card =
+            document.createElement("div");
+        card.classList.add("country-card");
+        card.innerHTML = `
+            <h3>${country.country}</h3>
+            <p>${country.percentage}%</p>
+            <a href="heritage.html?id=${country.id}">
+                View Details
+            </a>
+        `;
+        container.appendChild(card);
+    });
+    openCountryFromURL(countries);
+}
+
+function openCountryFromURL(countries) {
+    const params =
+        new URLSearchParams(window.location.search);
+    const id =
+        Number(params.get("id"));
+    if (!id) return;
+    const selected =
+        countries.find(c => c.id === id);
+    if (!selected) return;
+    document.querySelector("#modalCountryName").textContent =
+        selected.country;
+    document.querySelector("#modalCountryInfo").textContent =
+        selected.description;
+    document.querySelector("#countryModal").showModal();
+}
+
+const closeButton =
+    document.querySelector("#closeModal");
+if (closeButton) {
+    closeButton.addEventListener("click", () => {
+        document.querySelector("#countryModal").close();
+    });
+}
+
+// for splitting into modules, maybe we use js/main.js, js/storage.js, js/heritage.js, js/dashboard.js

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "country": "United States",
+        "percentage": 40,
+        "description": "Several ancestors were born in Colorado and Wyoming."
+    },
+    {
+        "id": 2,
+        "country": "Germany",
+        "percentage": 30,
+        "description": "German ancestors arrived during the late 1800s."
+    },
+    {
+        "id": 3,
+        "country": "Ireland",
+        "percentage": 20,
+        "description": "Irish family lines trace back to County Cork."
+    },
+    {
+        "id": 4,
+        "country": "England",
+        "percentage": 10,
+        "description": "English ancestors appear in early colonial records."
+    }
+]

@@ -175,4 +175,8 @@ if (closeButton) {
     });
 }
 
+if (document.querySelector("#countryContainer")) {
+    loadHeritageCountries();
+}
+
 // for splitting into modules, maybe we use js/main.js, js/storage.js, js/heritage.js, js/dashboard.js

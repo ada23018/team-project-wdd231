@@ -15,10 +15,14 @@ console.log(selectedPerson);
 const personInformation = document.querySelector("#person-information");
 
 if (selectedPerson) {
-    personInformation.textContent =
-        `${selectedPerson.firstName} ${selectedPerson.lastName}`
+    personInformation.innerHTML = `
+        <h3>${selectedPerson.firstName} ${selectedPerson.lastName}</h3>
+        <p>Gender: ${selectedPerson.gender}</p>
+        <p>Status: ${selectedPerson.status}</p>
+        <p>Birth Date: ${selectedPerson.birthMonth || "Unknown"} / ${selectedPerson.birthDay || "Unknown"} / ${selectedPerson.birthYear || "Unknown"}</p>
+        <p>Birth Country: ${getCountryName(selectedPerson.birthCountry)}</p>
+    `;
 }
-
 /* Sources: */
 
 /*

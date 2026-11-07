@@ -1,3 +1,10 @@
+let countries = [];
+
+async function  loadCountries() {
+    const response = await fetch("data/birthCountries.json")
+    countries = await response.json();
+}
+
 const params = new URLSearchParams(window.location.search);
 const personId = params.get("id");
 

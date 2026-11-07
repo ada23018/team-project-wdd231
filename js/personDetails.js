@@ -63,9 +63,17 @@ async function displayPerson() {
 }
 displayPerson();
 
+const editButton = document.querySelector("#edit-person");
+const editDialog = document.querySelector("#edit-person-dialog");
+
+editButton.addEventListener("click", function() {
+    editDialog.showModal();
+})
+
 /* Sources: */
 
 /*
+https://www.w3schools.com/jsref/met_dialog_showmodal.asp
 https://www.w3schools.com/js/js_date_formats.asp
 https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 https://www.w3schools.com/jsref/dom_obj_param.asp

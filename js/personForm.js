@@ -125,6 +125,13 @@ function loadPeople() {
 }
 loadPeople();
 
+function displayPeopleCount() {
+    const savedPeople = localStorage.getItem("people");
+    const people = JSON.parse(savedPeople) || [];
+    const peopleCount = document.querySelector("#people-count");
+    peopleCount.textContent = `People in Directory: ${people.length}`;
+}
+
 const personDisplay = document.querySelector("#person-display");
 
 personList.addEventListener("change", function() {

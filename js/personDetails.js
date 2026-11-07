@@ -1,8 +1,17 @@
 let countries = [];
 
-async function  loadCountries() {
+async function loadCountries() {
     const response = await fetch("data/birthCountries.json")
     countries = await response.json();
+}
+function getCountryName(countryValue) {
+    const country = countries.find(function(country) {
+        return country.value === countryValue;
+    });
+    if (country) {
+        return country.name;
+    }
+    return "Unknown";
 }
 
 const params = new URLSearchParams(window.location.search);

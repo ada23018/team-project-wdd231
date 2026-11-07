@@ -168,6 +168,10 @@ function displayPeople(people) {
     people.forEach(function(person) {
         const personCard = document.createElement("article")
         const personName = document.createElement("h4");
+
+        personCard.classList.add("person-card");
+        personCard.dataset.id = person.id;
+        
         personName.textContent = 
             `${person.lastName}, ${person.firstName} `;
         const birthInfo = document.createElement("p");
@@ -251,6 +255,8 @@ window.addEventListener("afterprint", function() {
 /* Sources: */
 
 /*
+    https://www.w3schools.com/tags/att_global_data.asp
+    https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
     https://www.w3schools.com/jsref/jsref_localecompare.asp
     https://www.w3schools.com/jsref/jsref_find.asp
     https://www.w3schools.com/js/js_maps.asp

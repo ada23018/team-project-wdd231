@@ -74,6 +74,12 @@ cancelEdit.addEventListener("click", function() {
     editDialog.close();
 })
 
+editDialog.addEventListener("click", function(event) {
+    if (event.target === editDialog) {
+        editDialog.close();
+    }
+});
+
 /* Sources: */
 
 /*

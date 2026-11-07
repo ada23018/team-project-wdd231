@@ -69,6 +69,10 @@ const editDialog = document.querySelector("#edit-person-dialog");
 editButton.addEventListener("click", function() {
     editDialog.showModal();
 })
+const cancelEdit = document.querySelector("#cancel-edit");
+cancelEdit.addEventListener("click", function() {
+    editDialog.closest();
+})
 
 /* Sources: */
 

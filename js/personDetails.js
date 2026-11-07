@@ -71,7 +71,7 @@ editButton.addEventListener("click", function() {
 })
 const cancelEdit = document.querySelector("#cancel-edit");
 cancelEdit.addEventListener("click", function() {
-    editDialog.closest();
+    editDialog.close();
 })
 
 /* Sources: */

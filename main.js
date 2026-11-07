@@ -36,7 +36,9 @@ if (relativeChoice && personFields) {
     })
 }*/
 
-const personForm = document.querySelector("#add-person");
+// there is a newer personForm in the personForm.js
+
+/*const personForm = document.querySelector("#add-person");
 
 if (personForm) {
     personForm.addEventListener("submit", function (event) {
@@ -48,7 +50,7 @@ if (personForm) {
         };
         console.log(person);
     })
-}
+}*/
 
 const dateElement = document.querySelector("#todaysDate");
 
@@ -159,12 +161,11 @@ if (document.querySelector("#countryContainer")) {
 /* Sources */
 
 /*
-https://www.w3schools.com/jsref/event_preventdefault.asp*/
+https://www.w3schools.com/jsref/event_preventdefault.asp
 https://www.w3schools.com/js/js_htmldom_eventlistener.asp
 https://www.w3schools.com/jsref/dom_obj_event.asp
 https://www.w3schools.com/tags/att_hidden.asp
 https://www.w3schools.com/jsref/jsref_date_new.asp
 https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp
 https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestring
-
 */

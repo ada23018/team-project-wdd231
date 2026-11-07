@@ -3,6 +3,15 @@ const personId = params.get("id");
 
 console.log(personId);
 
+const savedPeople = localStorage.getItem("people");
+const people = JSON.parse(savedPeople) || [];
+
+const selectedPerson = people.find(function(person) {
+    return person.id === personId;
+})
+
+console.log(selectedPerson);
+
 /* Sources: */
 
 /*

@@ -20,30 +20,23 @@ const testPerson = {
     marriageState: "CO",
     marriageCountry: "United States"
 };
-
-const relativeChoice = document.querySelector("#relativeChoice");
+// Moved the relativeChoice to the personForm.js in the js folder
+/*const relativeChoice = document.querySelector("#relativeChoice");
 const personFields = document.querySelector("#person-fields");
 
 if (relativeChoice && personFields) {
-    /*
-    https://www.w3schools.com/js/js_htmldom_eventlistener.asp
-    https://www.w3schools.com/jsref/dom_obj_event.asp
-    https://www.w3schools.com/tags/att_hidden.asp
-    */
+
     personFields.hidden = true;
     relativeChoice.addEventListener("change", function () {
-        /*console.log(relativeChoice.value);*/
         if (relativeChoice.value === "new") {
             personFields.hidden = false;
         } else {
             personFields.hidden = true;
         }
     })
-}
+}*/
 
 const personForm = document.querySelector("#add-person");
-
-/*https://www.w3schools.com/jsref/event_preventdefault.asp*/
 
 if (personForm) {
     personForm.addEventListener("submit", function (event) {
@@ -56,16 +49,6 @@ if (personForm) {
         console.log(person);
     })
 }
-
-/*First attempt:*/
-/*const todaysDate = new Date();
-document.querySelector("#todaysDate").textContent =    `Printed: ${todaysDate.toLocaleDateString()}`;*/
-
-/* 
-https://www.w3schools.com/jsref/jsref_date_new.asp
-https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp
-https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestring
-*/
 
 const dateElement = document.querySelector("#todaysDate");
 
@@ -91,14 +74,6 @@ function createPersonTemplate(person) {
         </div>
     `
 }
-
-/* First Attempt:*/
-/*
-console.log(createPersonTemplate(testPerson));
-
-document.querySelector("#person-container").innerHTML =
-    createPersonTemplate(testPerson);
-*/
 
 const personContainer = document.querySelector("#person-container");
 
@@ -180,3 +155,16 @@ if (document.querySelector("#countryContainer")) {
 }
 
 // for splitting into modules, maybe we use js/main.js, js/storage.js, js/heritage.js, js/dashboard.js
+
+/* Sources */
+
+/*
+https://www.w3schools.com/jsref/event_preventdefault.asp*/
+https://www.w3schools.com/js/js_htmldom_eventlistener.asp
+https://www.w3schools.com/jsref/dom_obj_event.asp
+https://www.w3schools.com/tags/att_hidden.asp
+https://www.w3schools.com/jsref/jsref_date_new.asp
+https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestring
+
+*/

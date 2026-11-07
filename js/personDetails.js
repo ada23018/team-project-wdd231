@@ -12,6 +12,13 @@ const selectedPerson = people.find(function(person) {
 
 console.log(selectedPerson);
 
+const personInformation = document.querySelector("#person-information");
+
+if (selectedPerson) {
+    personInformation.textContent =
+        `${selectedPerson.firstName} ${selectedPerson.lastName}`
+}
+
 /* Sources: */
 
 /*

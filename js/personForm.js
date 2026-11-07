@@ -131,6 +131,7 @@ function displayPeopleCount() {
     const peopleCount = document.querySelector("#people-count");
     peopleCount.textContent = `People in Directory: ${people.length}`;
 }
+displayPeopleCount();
 
 const personDisplay = document.querySelector("#person-display");
 

@@ -28,17 +28,26 @@ const selectedPerson = people.find(function(person) {
 
 console.log(selectedPerson);
 
-const personInformation = document.querySelector("#person-information");
+async function displayPerson() {
+    await loadCountries();
 
-if (selectedPerson) {
-    personInformation.innerHTML = `
-        <h3>${selectedPerson.firstName} ${selectedPerson.lastName}</h3>
-        <p>Gender: ${selectedPerson.gender}</p>
-        <p>Status: ${selectedPerson.status}</p>
-        <p>Birth Date: ${selectedPerson.birthMonth || "Unknown"} / ${selectedPerson.birthDay || "Unknown"} / ${selectedPerson.birthYear || "Unknown"}</p>
-        <p>Birth Country: ${getCountryName(selectedPerson.birthCountry)}</p>
-    `;
+    const personInformation = document.querySelector("#person-information");
+
+    if (selectedPerson) {
+        personInformation.innerHTML = `
+            <h3>${selectedPerson.firstName} ${selectedPerson.lastName}</h3>
+            <p>Gender: ${selectedPerson.gender}</p>
+            <p>Status: ${selectedPerson.status}</p>
+            <p>Birth Date: ${selectedPerson.birthMonth || "Unknown"} / ${selectedPerson.birthDay || "Unknown"} / ${selectedPerson.birthYear || "Unknown"}</p>
+            <p>Birth Country: ${getCountryName(selectedPerson.birthCountry)}</p>
+        `;
+    } else {
+        personInformation.textContent = "Person not found.";
+    }
 }
+
+displayPerson();
+
 /* Sources: */
 
 /*

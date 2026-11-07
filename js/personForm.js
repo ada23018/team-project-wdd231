@@ -184,6 +184,9 @@ function displayPeople(people) {
         personCard.appendChild(birthInfo);
         personCard.appendChild(countryInfo);
 
+        personCard.addEventListener("click", function() {
+            window.location.href = `person-details.html?id=${person.id}`;
+        })
         peopleDirectory.appendChild(personCard);
 
     });
@@ -255,6 +258,12 @@ window.addEventListener("afterprint", function() {
 /* Sources: */
 
 /*
+    https://www.w3schools.com/js/js_string_templates.asp
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
+    https://www.w3schools.com/jsref/jsref_decodeuricomponent.asp
+    https://developer.mozilla.org/en-US/docs/Web/API/Window/location
+    https://www.w3schools.com/js/js_window_location.asp
     https://www.w3schools.com/tags/att_global_data.asp
     https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
     https://www.w3schools.com/jsref/jsref_localecompare.asp

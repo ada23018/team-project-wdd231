@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heritage Explorer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles/fam-group.css">
     <script src="main.js" defer></script>
 </head>
 
@@ -24,8 +25,249 @@
         </nav>
     </header>
     <main id="main-content" role="main">
+        <h2>Family Group Record</h2>
+        <section id="record-info">
+            <p>Family group record number: <span id="record-number"></span></p>
+            <p>page: <span id="page-number"></span></p>
+        </section>
+
+        <!-- HUSBAND  -->
+        <section class="husband-section">
+            <table class="husband-table" border="1">
+                    <colgroup>
+                        <col class="narrow-column">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                <thead>
+                    <tr>
+                        <td colspan="6">
+                            <label for="husband-choice"><strong>Husband</strong></label>
+                            <select id="husband-choice">
+                                <option value="">Choose an option</option>
+                                <option value="new">Add New Person</option>
+                                <option value="existing">Link Existing Person</option>
+                            </select>
+                            <br>
+                            <p class="name"></p>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="8"></td>
+                        <td><strong>Birth Date</strong><br></td>
+                        <td colspan="4"><strong>Birth Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Christening Date</strong><br></td>
+                        <td colspan="4"><strong>Christening Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marriage Date</strong><br></td>
+                        <td colspan="4"><strong>Marriage Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Death Date</strong><br></td>
+                        <td colspan="4"><strong>Death Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Burial Date</strong><br></td>
+                        <td colspan="4"><strong>Burial Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><strong>Husband's Father</strong><br></td>
+                        <td>☐ Deceased</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><strong>Husband's Mother</strong><br></td>
+                        <td>☐ Deceased</td>
+                    </tr>
+                    <tr class="empty-row">
+                        <td colspan="5"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- WIFE -->
+         <section class="wife-section">
+            <table class="wife-table" border="1">
+                    <colgroup>
+                        <col class="narrow-column">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                <thead>
+                    <tr>
+                        <td colspan="6">
+                            <label for="wife-choice"><strong>Wife</strong></label>
+                            <select id="wife-choice">
+                                <option value="">Choose an option</option>
+                                <option value="new">Add New Person</option>
+                                <option value="existing">Link Existing Person</option>
+                            </select>
+                            <br>
+                            <p class="name"></p>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="8"></td>
+                        <td><strong>Birth Date</strong><br></td>
+                        <td colspan="4"><strong>Birth Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Christening Date</strong><br></td>
+                        <td colspan="4"><strong>Christening Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marriage Date</strong><br></td>
+                        <td colspan="4"><strong>Marriage Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Death Date</strong><br></td>
+                        <td colspan="4"><strong>Death Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Burial Date</strong><br></td>
+                        <td colspan="4"><strong>Burial Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><strong>Wife's Father</strong><br></td>
+                        <td>☐ Deceased</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><strong>Wife's Mother</strong><br></td>
+                        <td>☐ Deceased</td>
+                    </tr>
+                    <tr class="empty-row">
+                        <td colspan="5"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- CHILD 1 -->
+        <section class="children-section">
+            <table class="children-table" border="1">
+                    <colgroup>
+                        <col class="narrow-column">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                <thead>
+                    <tr>
+                        <th colspan="6">Children</th>
+                    </tr>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td colspan="4">
+                            <label for="child1-choice"><strong>Name</strong></label>
+                            <select id="child1-choice">
+                                <option value="">Choose an option</option>
+                                <option value="new">Add New Person</option>
+                                <option value="existing">Link Existing Person</option>
+                            </select>
+                            <br>
+                            <p class="name"></p>
+                        </td>
+                        <td>☐ Male<br>☐ Female</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="5"></td>
+                        <td><strong>Birth Date</strong><br></td>
+                        <td colspan="4"><strong>Birth Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Christening Date</strong><br></td>
+                        <td colspan="4"><strong>Christening Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marriage Date</strong><br></td>
+                        <td colspan="2"><strong>Marriage Place</strong><br></td>
+                        <td colspan="2"><strong>Spouse</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Death Date</strong><br></td>
+                        <td colspan="4"><strong>Death Place</strong><br></td>
+                    </tr>
+
+                    <tr class="empty-row">
+                        <td colspan="5"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- CHILD 2 -->
+        <section class="children-section">
+            <table class="children-table" border="1">
+                    <colgroup>
+                        <col class="narrow-column">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                <thead>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td colspan="4">
+                            <label for="child2-choice"><strong>Name</strong></label>
+                            <select id="child2-choice">
+                                <option value="">Choose an option</option>
+                                <option value="new">Add New Person</option>
+                                <option value="existing">Link Existing Person</option>
+                            </select>
+                            <br>
+                            <p class="name"></p>
+                        </td>
+                        <td>☐ Male<br>☐ Female</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="5"></td>
+                        <td><strong>Birth Date</strong><br></td>
+                        <td colspan="4"><strong>Birth Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Christening Date</strong><br></td>
+                        <td colspan="4"><strong>Christening Place</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marriage Date</strong><br></td>
+                        <td colspan="2"><strong>Marriage Place</strong><br></td>
+                        <td colspan="2"><strong>Spouse</strong><br></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Death Date</strong><br></td>
+                        <td colspan="4"><strong>Death Place</strong><br></td>
+                    </tr>
+
+                    <tr class="empty-row">
+                        <td colspan="5"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
     </main>
 </body>
 
 </html>
+

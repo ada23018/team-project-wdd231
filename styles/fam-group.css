@@ -1,0 +1,63 @@
+
+/* Standard US Letter paper */
+@page {
+    size: letter portrait;
+    margin: 0.4in;
+}
+
+/* General page setup */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+    color: #222;
+}
+/* Section headings */
+h3, h4 {
+    margin: 4px 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 4px;
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: break-word;
+}
+.narrow-column {
+    width: 4%;
+}
+.empty-row {
+    height: 70px;
+}
+
+/* Print settings */
+@media print {
+    body {
+        width: 100%;
+        font-size: 9pt;
+
+
+    select {
+        border: none;
+        appearance: none;
+        background: transparent;
+        font: inherit;
+    }
+
+    button {
+        display: none;
+    }
+}
+}

@@ -67,28 +67,66 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>Christening Date</strong><br></td>
-                        <td colspan="4"><strong>Christening Place</strong><br></td>
+                        <td>
+                            <strong>Christening Date</strong><br>
+                            <span id="husband-christening-date"></span>
+                        </td>
+                        <td colspan="4">
+                            <strong>Christening Place</strong><br>
+                            <span id="husband-christening-place"></span>
+                        </td>
                     </tr>
                     <tr>
-                        <td><strong>Marriage Date</strong><br></td>
-                        <td colspan="4"><strong>Marriage Place</strong><br></td>
+                        <td>
+                            <strong>Marriage Date</strong><br>
+                            <span id="husband-marriage-date"></span>
+                        </td>
+                        <td colspan="4">
+                            <strong>Marriage Place</strong><br>
+                            <span id="husband-marriage-place"></span>
+                        </td>
                     </tr>
                     <tr>
-                        <td><strong>Death Date</strong><br></td>
-                        <td colspan="4"><strong>Death Place</strong><br></td>
+                        <td>
+                            <strong>Death Date</strong><br>
+                            <span id="husband-death-date"></span>
+                        </td>
+                        <td colspan="4">
+                            <strong>Death Place</strong><br>
+                            <span id="husband-death-place"></span>
+                        </td>
                     </tr>
                     <tr>
-                        <td><strong>Burial Date</strong><br></td>
-                        <td colspan="4"><strong>Burial Place</strong><br></td>
+                        <td>
+                            <strong>Burial Date</strong><br>
+                            <span id="husband-burial-date"></span>
+                        </td>
+                        <td colspan="4">
+                            <strong>Burial Place</strong><br>
+                            <span id="husband-burial-place"></span>
+                        </td>
                     </tr>
                     <tr>
-                        <td colspan="4"><strong>Husband's Father</strong><br></td>
-                        <td>☐ Deceased</td>
+                        <td colspan="4">
+                            <label for="husband-father-choice"><strong>Husband's Father</strong></label>
+                            <select id="husband-father-choice">
+                                <option value="">Choose a Father</option>
+                            </select>
+                            <br>
+                            <p id="husband-father-name" class="name"></p>
+                        </td>
+                        <td><span id="husband-father-status"></span></td>
                     </tr>
                     <tr>
-                        <td colspan="4"><strong>Husband's Mother</strong><br></td>
-                        <td>☐ Deceased</td>
+                        <td colspan="4">
+                            <label for="husband-mother-choice"><strong>Husband's Mother</strong></label>
+                            <select id="husband-mother-choice">
+                                <option value="">Choose a Mother</option>
+                            </select>
+                            <br>
+                            <p id="husband-mother-name" class="name"></p>
+                        </td>
+                        <td><span id="husband-mother-status"></span></td>
                     </tr>
                     <tr class="empty-row">
                         <td colspan="5"></td>
@@ -132,28 +170,56 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>Christening Date</strong><br></td>
-                        <td colspan="4"><strong>Christening Place</strong><br></td>
+                        <td>
+                            <strong>Christening Date</strong><br>
+                            <span id="wife-christening-date"></span>
+                        </td>
+                        <td colspan="4">
+                            <strong>Christening Place</strong><br>
+                            <span id="wife-christening-place"></span>
+                        </td>
                     </tr>
                     <tr>
-                        <td><strong>Marriage Date</strong><br></td>
-                        <td colspan="4"><strong>Marriage Place</strong><br></td>
+                        <td>
+                            <strong>Death Date</strong><br>
+                            <span id="wife-death-date"></span>
+                        </td>
+                        <td colspan="4">
+                            <strong>Death Place</strong><br>
+                            <span id="wife-death-place"></span>
+                        </td>
                     </tr>
                     <tr>
-                        <td><strong>Death Date</strong><br></td>
-                        <td colspan="4"><strong>Death Place</strong><br></td>
+                        <td>
+                            <strong>Burial Date</strong><br>
+                            <span id="wife-burial-date"></span>
+                        </td>
+                        <td colspan="4">
+                            <strong>Burial Place</strong><br>
+                            <span id="wife-burial-place"></span>
+                        </td>
                     </tr>
                     <tr>
-                        <td><strong>Burial Date</strong><br></td>
-                        <td colspan="4"><strong>Burial Place</strong><br></td>
+                        <td colspan="4">
+                            <label for="wife-father-choice"><strong>Wife's Father</strong></label>
+                            <select id="wife-father-choice">
+                                <option value="">Choose a Father</option>
+                            </select>
+                            <br>
+                            <p id="wife-father-name" class="name"></p>
+                        </td>
+                        <td><span id="wife-father-status"></span></td>
                     </tr>
                     <tr>
-                        <td colspan="4"><strong>Wife's Father</strong><br></td>
-                        <td>☐ Deceased</td>
-                    </tr>
-                    <tr>
-                        <td colspan="4"><strong>Wife's Mother</strong><br></td>
-                        <td>☐ Deceased</td>
+                        <td colspan="4">
+                            <label for="wife-mother-choice"><strong>Wife's Mother</strong></label>
+                            <select id="wife-mother-choice">
+                                <option value="">Choose a Mother</option>
+                            </select>
+                            <br>
+                            <p id="wife-mother-name" class="name"></p>
+                        </td>
+                        <td><span id="wife-mother-status"></span></td>
                     </tr>
                     <tr class="empty-row">
                         <td colspan="5"></td>
@@ -187,7 +253,7 @@
                             <br>
                             <p id="child1-name" class="name"></p>
                         </td>
-                        <td>☐ Male<br>☐ Female</td>
+                        <td id="child1-gender">☐ Male<br>☐ Female</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -202,17 +268,38 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>Christening Date</strong><br></td>
-                        <td colspan="4"><strong>Christening Place</strong><br></td>
+                        <td>
+                            <strong>Christening Date</strong><br>
+                            <span id="child1-christening-date"></span>
+                        </td>
+                        <td colspan="4">
+                            <strong>Christening Place</strong><br>
+                            <span id="child1-christening-place"></span>
+                        </td>
+                    <tr>
+                        <td>
+                            <strong>Marriage Date</strong><br>
+                            <span id="child1-marriage-date"></span>
+                        </td>
+                        <td colspan="2">
+                            <strong>Marriage Place</strong><br>
+                            <span id="child1-marriage-place"></span>
+                        </td>
+                        <td colspan="2">
+                            <strong>Spouse</strong><br>
+                            <span id="child1-spouse"></span>
+                        </td>
                     </tr>
                     <tr>
-                        <td><strong>Marriage Date</strong><br></td>
-                        <td colspan="2"><strong>Marriage Place</strong><br></td>
-                        <td colspan="2"><strong>Spouse</strong><br></td>
-                    </tr>
                     <tr>
-                        <td><strong>Death Date</strong><br></td>
-                        <td colspan="4"><strong>Death Place</strong><br></td>
+                        <td>
+                            <strong>Death Date</strong><br>
+                            <span id="child1-death-date"></span>
+                        </td>
+                        <td colspan="4">
+                            <strong>Death Place</strong><br>
+                            <span id="child1-death-place"></span>
+                        </td>
                     </tr>
 
                     <tr class="empty-row">
@@ -244,7 +331,7 @@
                             <br>
                             <p id="child2-name" class="name"></p>
                         </td>
-                        <td>☐ Male<br>☐ Female</td>
+                        <td id="child2-gender">☐ Male<br>☐ Female</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -259,17 +346,38 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>Christening Date</strong><br></td>
-                        <td colspan="4"><strong>Christening Place</strong><br></td>
+                        <td>
+                            <strong>Christening Date</strong><br>
+                            <span id="child2-christening-date"></span>
+                        </td>
+                        <td colspan="4">
+                            <strong>Christening Place</strong><br>
+                            <span id="child2-christening-place"></span>
+                        </td>
                     </tr>
                     <tr>
-                        <td><strong>Marriage Date</strong><br></td>
-                        <td colspan="2"><strong>Marriage Place</strong><br></td>
-                        <td colspan="2"><strong>Spouse</strong><br></td>
+                        <td>
+                            <strong>Marriage Date</strong><br>
+                            <span id="child2-marriage-date"></span>
+                        </td>
+                        <td colspan="2">
+                            <strong>Marriage Place</strong><br>
+                            <span id="child2-marriage-place"></span>
+                        </td>
+                        <td colspan="2">
+                            <strong>Spouse</strong><br>
+                            <span id="child2-spouse"></span>
+                        </td>
                     </tr>
                     <tr>
-                        <td><strong>Death Date</strong><br></td>
-                        <td colspan="4"><strong>Death Place</strong><br></td>
+                        <td>
+                            <strong>Death Date</strong><br>
+                            <span id="child2-death-date"></span>
+                        </td>
+                        <td colspan="4">
+                            <strong>Death Place</strong><br>
+                            <span id="child2-death-place"></span>
+                        </td>
                     </tr>
 
                     <tr class="empty-row">

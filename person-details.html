@@ -27,11 +27,132 @@
         <section id="person-details">
             <h2>Person Details</h2>
             <div id="person-information"></div>
-            <button id="edit-person">Edit Person</button>
-            <dialog id="edit-person-dialog">
-                <h2>Edit Person</h2>
-                <button type="button" id="cancel-edit">Cancel</button>
-            </dialog>
+            <form id="person-details-form">
+                
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName">
+
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName">
+
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="unknown">Unknown</option>
+                    </select> 
+
+                    <label for="status">Status</label>
+                    <select id="status" name="status">
+                        <option value="living">Living</option>
+                        <option value="deceased">Deceased</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Birth Information</legend>
+
+                    <label for="birthDate">Birth Date</label>
+                    <input type="date" id="birthDate" name="birthDate">
+
+                    <label for="birthCity">Birth City</label>
+                    <input type="text" id="birthCity" name="birthCity">
+
+                    <label for="birthState">Birth State</label>
+                    <input type="text" id="birthState" name="birthState">
+
+                    <label for="birthCountry">Birth Country</label>
+                    <select id="birthCountry" name="birthCountry">
+                        <option value="">Select a Country</option>
+                    </select>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Christening Information</legend>
+
+                    <label for="christeningDate">Christening Date</label>
+                    <input type="date" id="christeningDate" name="christeningDate">
+
+                    <label for="christeningCity">Christening City</label>
+                    <input type="text" id="christeningCity" name="christeningCity">
+
+                    <label for="christeningState">Christening State</label>
+                    <input type="text" id="christeningState" name="christeningState">
+
+                    <label for="christeningCountry">Christening Country</label>
+                    <select id="christeningCountry" name="christeningCountry">
+                        <option value="">Select a Country</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Marriage Information</legend>
+
+                    <label for="spouse">Spouse</label>
+                    <select id="spouse" name="spouse">
+                        <option value="">Select a Spouse</option>
+                    </select>
+
+                    <label for="marriageDate">Marriage Date</label>
+                    <input type="date" id="marriageDate" name="marriageDate">
+
+                    <label for="marriageCity">City</label>
+                    <input type="text" id="marriageCity" name="marriageCity">
+
+                    <label for="marriageState">State</label>
+                    <input type="text" id="marriageState" name="marriageState">
+
+                    <label for="marriageCountry">Country</label>
+                    <select id="marriageCountry" name="marriageCountry">
+                        <option value="">Select a Country</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Death Information</legend>
+
+                    <label for="deathDate">Death Date</label>
+                    <input type="date" id="deathDate" name="deathDate">
+
+                    <label for="deathCity">Death City</label>
+                    <input type="text" id="deathCity" name="deathCity">
+
+                    <label for="deathState">Death State</label>
+                    <input type="text" id="deathState" name="deathState">
+
+                    <label for="deathCountry">Death Country</label>
+                    <select id="deathCountry" name="deathCountry">
+                        <option value="">Select a Country</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Burial Information</legend>
+
+                    <label for="burialDate">Burial Date</label>
+                    <input type="date" id="burialDate" name="burialDate">
+
+                    <label for="burialCity">Burial City</label>
+                    <input type="text" id="burialCity" name="burialCity">
+
+                    <label for="burialState">Burial State</label>
+                    <input type="text" id="burialState" name="burialState">
+
+                    <label for="burialCountry">Burial Country</label>
+                    <select id="burialCountry" name="burialCountry">
+                        <option value="">Select a Country</option>
+                    </select>
+                </fieldset>
+
+            </form>
+            <button id="submit-person">Submit Person</button>
+
         </section>
     </main>
 

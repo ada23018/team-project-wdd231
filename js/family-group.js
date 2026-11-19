@@ -127,3 +127,82 @@ wifeChoice.addEventListener("change", function() {
     }
 });
 
+child1Choice.addEventListener("change", function() {
+    const selectedId = child1Choice.value;
+
+    const selectedPerson = people.find(function(person) {
+        return person.id === selectedId;
+    });
+
+    const child1Name = document.querySelector("#child1-name");
+
+    if (selectedPerson) {
+        child1Name.textContent =
+            `${selectedPerson.firstName} ${selectedPerson.lastName}`;
+
+        let birthDate = "Unknown";
+
+        if (selectedPerson.birthMonth && selectedPerson.birthDay && selectedPerson.birthYear) {
+            const date = new Date(
+                selectedPerson.birthYear,
+                selectedPerson.birthMonth - 1,
+                selectedPerson.birthDay
+            );
+
+            birthDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+        document.querySelector("#child1-birth-date").textContent = birthDate;
+        document.querySelector("#child1-birth-country").textContent =
+            toTitleCase(selectedPerson.birthCountry);
+    } else {
+        child1Name.textContent = "";
+        document.querySelector("#child1-birth-date").textContent = "";
+        document.querySelector("#child1-birth-country").textContent = "";
+    }
+});
+
+child2Choice.addEventListener("change", function() {
+    const selectedId = child2Choice.value;
+
+    const selectedPerson = people.find(function(person) {
+        return person.id === selectedId;
+    });
+
+    const child2Name = document.querySelector("#child2-name");
+
+    if (selectedPerson) {
+        child2Name.textContent =
+            `${selectedPerson.firstName} ${selectedPerson.lastName}`;
+
+        let birthDate = "Unknown";
+
+        if (selectedPerson.birthMonth && selectedPerson.birthDay && selectedPerson.birthYear) {
+            const date = new Date(
+                selectedPerson.birthYear,
+                selectedPerson.birthMonth - 1,
+                selectedPerson.birthDay
+            );
+
+            birthDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+        document.querySelector("#child2-birth-date").textContent = birthDate;
+        document.querySelector("#child2-birth-country").textContent =
+            toTitleCase(selectedPerson.birthCountry);
+    } else {
+        child2Name.textContent = "";
+        document.querySelector("#child2-birth-date").textContent = "";
+        document.querySelector("#child2-birth-country").textContent = "";
+    }
+});
+
+

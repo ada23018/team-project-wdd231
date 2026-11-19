@@ -83,5 +83,47 @@ husbandChoice.addEventListener("change", function() {
     } else {
         husbandName.textContent = "";
         document.querySelector("#husband-birth-date").textContent = "";
+        document.querySelector("#husband-birth-country").textContent = "";
     }
 });
+
+
+wifeChoice.addEventListener("change", function() {
+    const selectedId = wifeChoice.value;
+
+    const selectedPerson = people.find(function(person) {
+        return person.id === selectedId;
+    });
+
+    const wifeName = document.querySelector("#wife-name");
+
+    if (selectedPerson) {
+        wifeName.textContent =
+            `${selectedPerson.firstName} ${selectedPerson.lastName}`;
+
+        let birthDate = "Unknown";
+
+        if (selectedPerson.birthMonth && selectedPerson.birthDay && selectedPerson.birthYear) {
+            const date = new Date(
+                selectedPerson.birthYear,
+                selectedPerson.birthMonth - 1,
+                selectedPerson.birthDay
+            );
+
+            birthDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+        document.querySelector("#wife-birth-date").textContent = birthDate;
+        document.querySelector("#wife-birth-country").textContent =
+            toTitleCase(selectedPerson.birthCountry);
+    } else {
+        wifeName.textContent = "";
+        document.querySelector("#wife-birth-date").textContent = "";
+        document.querySelector("#wife-birth-country").textContent = "";
+    }
+});
+

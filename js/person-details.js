@@ -30,6 +30,17 @@ console.log(selectedPerson);
 
 async function displayPerson() {
     await loadCountries();
+    
+    const birthCountry = document.querySelector("#birthCountry");
+
+    countries.forEach(function(country) {
+        const option = document.createElement("option");
+        option.value = country.value;
+        option.textContent = country.name;
+        birthCountry.appendChild(option);
+    });
+
+    birthCountry.value = selectedPerson.birthCountry;
 
     const personInformation = document.querySelector("#person-information");
 

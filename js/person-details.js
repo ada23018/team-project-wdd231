@@ -49,8 +49,13 @@ async function displayPerson() {
         document.querySelector("#lastName").value = selectedPerson.lastName;
         document.querySelector("#gender").value = selectedPerson.gender;
         document.querySelector("#status").value = selectedPerson.status;
-        document.querySelector("#birthCity").value = selectedPerson.birthCity;
-        document.querySelector("#birthState").value = selectedPerson.birthState;
+        if (selectedPerson.birthCity) {
+            document.querySelector("#birthCity").value = selectedPerson.birthCity;
+        }
+
+        if (selectedPerson.birthState) {
+            document.querySelector("#birthState").value = selectedPerson.birthState;
+        }
         
         let birthDate = "Unknown";
 

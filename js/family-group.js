@@ -135,10 +135,15 @@ child1Choice.addEventListener("change", function() {
     });
 
     const child1Name = document.querySelector("#child1-name");
-
+    const child1Gender = document.querySelector("#child1-gender");
     if (selectedPerson) {
         child1Name.textContent =
             `${selectedPerson.firstName} ${selectedPerson.lastName}`;
+            if (selectedPerson.gender === "male") {
+                child1Gender.innerHTML = "☑ Male<br>☐ Female";
+            } else if (selectedPerson.gender === "female") {
+                child1Gender.innerHTML = "☐ Male<br>☑ Female";
+            }
 
         let birthDate = "Unknown";
 
@@ -163,6 +168,7 @@ child1Choice.addEventListener("change", function() {
         child1Name.textContent = "";
         document.querySelector("#child1-birth-date").textContent = "";
         document.querySelector("#child1-birth-country").textContent = "";
+        child1Gender.innerHTML = "☐ Male<br>☐ Female";
     }
 });
 
@@ -174,10 +180,15 @@ child2Choice.addEventListener("change", function() {
     });
 
     const child2Name = document.querySelector("#child2-name");
-
+    const child2Gender = document.querySelector("#child2-gender");
     if (selectedPerson) {
         child2Name.textContent =
             `${selectedPerson.firstName} ${selectedPerson.lastName}`;
+            if (selectedPerson.gender === "male") {
+                child2Gender.innerHTML = "☑ Male<br>☐ Female";
+            } else if (selectedPerson.gender === "female") {
+                child2Gender.innerHTML = "☐ Male<br>☑ Female";
+            }
 
         let birthDate = "Unknown";
 
@@ -202,7 +213,6 @@ child2Choice.addEventListener("change", function() {
         child2Name.textContent = "";
         document.querySelector("#child2-birth-date").textContent = "";
         document.querySelector("#child2-birth-country").textContent = "";
+        child2Gender.innerHTML = "☐ Male<br>☐ Female";
     }
 });
-
-

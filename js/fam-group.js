@@ -1,0 +1,87 @@
+function toTitleCase(text) {
+    let titleCase = "";
+    let words = text.toLowerCase().split(" ");
+
+    for (let i = 0; i < words.length; i++) {
+        let firstLetter = words[i].charAt(0).toUpperCase();
+        let remainingLetters = words[i].slice(1);
+
+        titleCase += firstLetter + remainingLetters + " ";
+    }
+
+    return titleCase.trim();
+}
+
+const savedPeople = localStorage.getItem("people");
+let people = [];
+
+if (savedPeople !== null) {
+    people = JSON.parse(savedPeople);
+}
+console.log(people);
+
+people.sort(function(a,b) {
+    if (a.lastName.toLowerCase() < b.lastName.toLowerCase()) {
+        return -1;
+    } else if (a.lastName.toLowerCase() > b.lastName.toLowerCase()) {
+        return 1;
+    }
+    return 0;
+});
+
+function populateDropdown(dropdown) {
+    people.forEach(function(person) {
+        const option = document.createElement("option");
+        option.value = person.id;
+        option.textContent =   `${person.firstName} ${person.lastName}`
+        dropdown.appendChild(option);
+    });
+}
+
+const husbandChoice = document.querySelector("#husband-choice");
+populateDropdown(husbandChoice);
+
+const wifeChoice = document.querySelector("#wife-choice");
+populateDropdown(wifeChoice);
+
+const child1Choice = document.querySelector("#child1-choice");
+populateDropdown(child1Choice);
+
+const child2Choice = document.querySelector("#child2-choice");
+populateDropdown(child2Choice);
+
+husbandChoice.addEventListener("change", function() {
+    const selectedId = husbandChoice.value;
+
+    const selectedPerson = people.find(function(person) {
+        return person.id === selectedId;
+    });
+
+    const husbandName = document.querySelector("#husband-name");
+
+    if (selectedPerson) {
+        husbandName.textContent =
+            `${selectedPerson.firstName} ${selectedPerson.lastName}`;
+            let birthDate = "Unknown";
+
+            if (selectedPerson.birthMonth && selectedPerson.birthDay && selectedPerson.birthYear) {
+                const date = new Date(
+                    selectedPerson.birthYear,
+                    selectedPerson.birthMonth - 1,
+                    selectedPerson.birthDay
+                );
+
+                birthDate = date.toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                });
+            }
+        document.querySelector("#husband-birth-date").textContent = birthDate;
+        document.querySelector("#husband-birth-country").textContent =
+    toTitleCase(selectedPerson.birthCountry);
+    } else {
+        husbandName.textContent = "";
+        document.querySelector("#husband-birth-date").textContent = "";
+    }
+});

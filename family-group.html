@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="/styles/fam-group.css">
     <script src="main.js" defer></script>
+    <script src="js/fam-group.js" defer></script>
 </head>
 
 <body>
@@ -48,19 +49,22 @@
                             <label for="husband-choice"><strong>Husband</strong></label>
                             <select id="husband-choice">
                                 <option value="">Choose an option</option>
-                                <option value="new">Add New Person</option>
-                                <option value="existing">Link Existing Person</option>
                             </select>
                             <br>
-                            <p class="name"></p>
+                            <p id="husband-name" class="name"></p>
                         </td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td rowspan="8"></td>
-                        <td><strong>Birth Date</strong><br></td>
-                        <td colspan="4"><strong>Birth Place</strong><br></td>
+                        <td>
+                            <strong>Birth Date</strong><br>
+                            <span id="husband-birth-date"></span>
+                        </td>
+                        <td colspan="4"><strong>Birth Place</strong><br>
+                            <span id="husband-birth-country"></span>
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>Christening Date</strong><br></td>
@@ -110,11 +114,9 @@
                             <label for="wife-choice"><strong>Wife</strong></label>
                             <select id="wife-choice">
                                 <option value="">Choose an option</option>
-                                <option value="new">Add New Person</option>
-                                <option value="existing">Link Existing Person</option>
                             </select>
                             <br>
-                            <p class="name"></p>
+                            <p id="wife-name" class="name"></p>
                         </td>
                     </tr>
                 </thead>
@@ -176,11 +178,9 @@
                             <label for="child1-choice"><strong>Name</strong></label>
                             <select id="child1-choice">
                                 <option value="">Choose an option</option>
-                                <option value="new">Add New Person</option>
-                                <option value="existing">Link Existing Person</option>
                             </select>
                             <br>
-                            <p class="name"></p>
+                            <p id="child1-name" class="name"></p>
                         </td>
                         <td>☐ Male<br>☐ Female</td>
                     </tr>
@@ -230,11 +230,9 @@
                             <label for="child2-choice"><strong>Name</strong></label>
                             <select id="child2-choice">
                                 <option value="">Choose an option</option>
-                                <option value="new">Add New Person</option>
-                                <option value="existing">Link Existing Person</option>
                             </select>
                             <br>
-                            <p class="name"></p>
+                            <p id="child2-name" class="name"></p>
                         </td>
                         <td>☐ Male<br>☐ Female</td>
                     </tr>

@@ -34,6 +34,11 @@ async function displayPerson() {
     const personInformation = document.querySelector("#person-information");
 
     if (selectedPerson) {
+        document.querySelector("#firstName").value = selectedPerson.firstName;
+        document.querySelector("#lastName").value = selectedPerson.lastName;
+        document.querySelector("#gender").value = selectedPerson.gender;
+        document.querySelector("#status").value = selectedPerson.status;
+        
         let birthDate = "Unknown";
 
         if (selectedPerson.birthMonth && selectedPerson.birthDay && selectedPerson.birthYear) {
@@ -42,6 +47,10 @@ async function displayPerson() {
                 selectedPerson.birthMonth - 1,
                 selectedPerson.birthDay
             );
+            document.querySelector("#birthDate").value =
+                selectedPerson.birthYear + "-" +
+                String(selectedPerson.birthMonth).padStart(2, "0") + "-" +
+                String(selectedPerson.birthDay).padStart(2, "0");
 
             birthDate = date.toLocaleDateString("en-GB", {
                 day: "numeric",
@@ -63,22 +72,7 @@ async function displayPerson() {
 }
 displayPerson();
 
-const editButton = document.querySelector("#edit-person");
-const editDialog = document.querySelector("#edit-person-dialog");
 
-editButton.addEventListener("click", function() {
-    editDialog.showModal();
-})
-const cancelEdit = document.querySelector("#cancel-edit");
-cancelEdit.addEventListener("click", function() {
-    editDialog.close();
-})
-
-editDialog.addEventListener("click", function(event) {
-    if (event.target === editDialog) {
-        editDialog.close();
-    }
-});
 
 /* Sources: */
 
@@ -88,4 +82,5 @@ https://www.w3schools.com/js/js_date_formats.asp
 https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 https://www.w3schools.com/jsref/dom_obj_param.asp
 https://www.w3schools.com/tags/tag_param.asp
+https://www.w3schools.com/jsref/jsref_string_padstart.asp
 */

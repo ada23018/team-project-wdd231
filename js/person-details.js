@@ -43,6 +43,18 @@ async function displayPerson() {
     const personInformation = document.querySelector("#person-information");
 
     if (selectedPerson) {
+
+        const spouse = document.querySelector("#spouse");
+
+        people.forEach(function(person) {
+            if (person.id !== selectedPerson.id) {
+                const option = document.createElement("option");
+                option.value = person.id;
+                option.textContent = person.firstName + " " + person.lastName;
+                spouse.appendChild(option);
+            }
+        });
+
         birthCountry.value = selectedPerson.birthCountry;
 
         document.querySelector("#firstName").value = selectedPerson.firstName;
@@ -177,7 +189,14 @@ async function displayPerson() {
 }
 displayPerson();
 
-
+const personForm = document.querySelector("#person-details-form");
+personForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    if (selectedPerson) {
+        selectedPerson.firstName = document.querySelector("#firstName").value;
+        selectedPerson.lastName = document.querySelector("#lastName").value;
+    }
+});
 
 /* Sources: */
 

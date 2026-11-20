@@ -199,7 +199,6 @@ async function displayPerson() {
             <p>Birth Place: ${selectedPerson.birthCity}, ${selectedPerson.birthState}, ${getCountryName(selectedPerson.birthCountry)}</p>
             <p>Christening Date: ${selectedPerson.christeningDate}</p>
             <p>Christening Place: ${selectedPerson.christeningCity}, ${selectedPerson.christeningState}, ${getCountryName(selectedPerson.christeningCountry)}</p>
-            <p>
             <p>Spouse: ${spouseName}</p>
             <p>Marriage Date: ${selectedPerson.marriageDate}</p>
             <p>Marriage Place: ${selectedPerson.marriageCity}, ${selectedPerson.marriageState}, ${getCountryName(selectedPerson.marriageCountry)}</p>

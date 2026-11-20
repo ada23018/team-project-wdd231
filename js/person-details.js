@@ -40,11 +40,11 @@ async function displayPerson() {
         birthCountry.appendChild(option);
     });
 
-    birthCountry.value = selectedPerson.birthCountry;
-
     const personInformation = document.querySelector("#person-information");
 
     if (selectedPerson) {
+        birthCountry.value = selectedPerson.birthCountry;
+
         document.querySelector("#firstName").value = selectedPerson.firstName;
         document.querySelector("#lastName").value = selectedPerson.lastName;
         document.querySelector("#gender").value = selectedPerson.gender;
@@ -120,9 +120,8 @@ async function displayPerson() {
         if (selectedPerson.marriageCountry) {
             marriageCountry.value = selectedPerson.marriageCountry;
         }
-
-        if (selectedPerson.deathState) {
-            document.querySelector("#deathState").value = selectedPerson.deathState;
+        if (selectedPerson.deathDate) {
+            document.querySelector("#deathDate").value = selectedPerson.deathDate;
         }
         if (selectedPerson.deathCity) {
             document.querySelector("#deathCity").value = selectedPerson.deathCity;
@@ -163,8 +162,8 @@ async function displayPerson() {
         }
 
         if (selectedPerson.burialState) {
-    document.querySelector("#burialState").value = selectedPerson.burialState;
-}
+            document.querySelector("#burialState").value = selectedPerson.burialState;
+        }
         personInformation.innerHTML = `
             <h3>${selectedPerson.firstName} ${selectedPerson.lastName}</h3>
             <p>Gender: ${selectedPerson.gender}</p>

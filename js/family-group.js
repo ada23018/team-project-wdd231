@@ -230,6 +230,20 @@ husbandChoice.addEventListener("change", function() {
         husbandName.textContent = "";
         document.querySelector("#husband-birth-date").textContent = "";
         document.querySelector("#husband-birth-country").textContent = "";
+        document.querySelector("#husband-christening-date").textContent = "";
+        document.querySelector("#husband-christening-place").textContent = "";
+        document.querySelector("#husband-marriage-date").textContent = "";
+        document.querySelector("#husband-marriage-place").textContent = "";
+        document.querySelector("#husband-death-date").textContent = "";
+        document.querySelector("#husband-death-place").textContent = "";
+        document.querySelector("#husband-burial-date").textContent = "";
+        document.querySelector("#husband-burial-place").textContent = "";
+        document.querySelector("#husband-father-name").textContent = "";
+        document.querySelector("#husband-father-status").textContent = "";
+        document.querySelector("#husband-mother-name").textContent = "";
+        document.querySelector("#husband-mother-status").textContent = "";
+        husbandFatherChoice.value = "";
+        husbandMotherChoice.value = "";
     }
 });
 
@@ -369,6 +383,18 @@ wifeChoice.addEventListener("change", function() {
         wifeName.textContent = "";
         document.querySelector("#wife-birth-date").textContent = "";
         document.querySelector("#wife-birth-country").textContent = "";
+        document.querySelector("#wife-christening-date").textContent = "";
+        document.querySelector("#wife-christening-place").textContent = "";
+        document.querySelector("#wife-death-date").textContent = "";
+        document.querySelector("#wife-death-place").textContent = "";
+        document.querySelector("#wife-burial-date").textContent = "";
+        document.querySelector("#wife-burial-place").textContent = "";
+        document.querySelector("#wife-father-name").textContent = "";
+        document.querySelector("#wife-father-status").textContent = "";
+        document.querySelector("#wife-mother-name").textContent = "";
+        document.querySelector("#wife-mother-status").textContent = "";
+        wifeFatherChoice.value = "";
+        wifeMotherChoice.value = "";
     }
 });
 

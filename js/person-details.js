@@ -76,7 +76,95 @@ async function displayPerson() {
                 year: "numeric"
             });
         }
+        if (selectedPerson.christeningDate) {
+            document.querySelector("#christeningDate").value = selectedPerson.christeningDate;
+        }
+        if (selectedPerson.christeningCity) {
+            document.querySelector("#christeningCity").value = selectedPerson.christeningCity;
+        }
 
+        if (selectedPerson.christeningState) {
+            document.querySelector("#christeningState").value = selectedPerson.christeningState;
+        }
+        const christeningCountry = document.querySelector("#christeningCountry");
+
+        countries.forEach(function(country) {
+            const option = document.createElement("option");
+            option.value = country.value;
+            option.textContent = country.name;
+            christeningCountry.appendChild(option);
+        });
+
+        if (selectedPerson.christeningCountry) {
+            christeningCountry.value = selectedPerson.christeningCountry;
+        }
+        if (selectedPerson.marriageDate) {
+            document.querySelector("#marriageDate").value = selectedPerson.marriageDate;
+        }
+        if (selectedPerson.marriageCity) {
+            document.querySelector("#marriageCity").value = selectedPerson.marriageCity;
+        }
+
+        if (selectedPerson.marriageState) {
+            document.querySelector("#marriageState").value = selectedPerson.marriageState;
+        }
+
+        const marriageCountry = document.querySelector("#marriageCountry");
+
+        countries.forEach(function(country) {
+            const option = document.createElement("option");
+            option.value = country.value;
+            option.textContent = country.name;
+            marriageCountry.appendChild(option);
+        });
+        if (selectedPerson.marriageCountry) {
+            marriageCountry.value = selectedPerson.marriageCountry;
+        }
+
+        if (selectedPerson.deathState) {
+            document.querySelector("#deathState").value = selectedPerson.deathState;
+        }
+        if (selectedPerson.deathCity) {
+            document.querySelector("#deathCity").value = selectedPerson.deathCity;
+        }
+
+        if (selectedPerson.deathState) {
+            document.querySelector("#deathState").value = selectedPerson.deathState;
+        }
+        const deathCountry = document.querySelector("#deathCountry");
+
+        countries.forEach(function(country) {
+            const option = document.createElement("option");
+            option.value = country.value;
+            option.textContent = country.name;
+            deathCountry.appendChild(option);
+        });
+
+        if (selectedPerson.deathCountry) {
+            deathCountry.value = selectedPerson.deathCountry;
+        }
+        if (selectedPerson.burialDate) {
+            document.querySelector("#burialDate").value = selectedPerson.burialDate;
+        }
+        if (selectedPerson.burialCity) {
+            document.querySelector("#burialCity").value = selectedPerson.burialCity;
+        }
+        const burialCountry = document.querySelector("#burialCountry");
+
+        countries.forEach(function(country) {
+            const option = document.createElement("option");
+            option.value = country.value;
+            option.textContent = country.name;
+            burialCountry.appendChild(option);
+        });
+
+        if (selectedPerson.burialCountry) {
+            burialCountry.value = selectedPerson.burialCountry;
+        }
+
+        if (selectedPerson.burialState) {
+    document.querySelector("#burialState").value = selectedPerson.burialState;
+}
         personInformation.innerHTML = `
             <h3>${selectedPerson.firstName} ${selectedPerson.lastName}</h3>
             <p>Gender: ${selectedPerson.gender}</p>

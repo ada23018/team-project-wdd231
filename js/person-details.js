@@ -195,7 +195,43 @@ personForm.addEventListener("submit", function(event) {
     if (selectedPerson) {
         selectedPerson.firstName = document.querySelector("#firstName").value;
         selectedPerson.lastName = document.querySelector("#lastName").value;
+        selectedPerson.gender = document.querySelector("#gender").value;
+        selectedPerson.status = document.querySelector("#status").value;
+        
+        const birthDate = document.querySelector("#birthDate").value;
+
+        if (birthDate) {
+            const dateParts = birthDate.split("-");
+
+            selectedPerson.birthYear = Number(dateParts[0]);
+            selectedPerson.birthMonth = Number(dateParts[1]);
+            selectedPerson.birthDay = Number(dateParts[2]);
+        } else {
+            selectedPerson.birthYear = "";
+            selectedPerson.birthMonth = "";
+            selectedPerson.birthDay = "";
+        }
+        selectedPerson.birthCity = document.querySelector("#birthCity").value;
+        selectedPerson.birthState = document.querySelector("#birthState").value;
+        selectedPerson.birthCountry = document.querySelector("#birthCountry").value;
+        selectedPerson.christeningDate = document.querySelector("#christeningDate").value;
+        selectedPerson.christeningCity = document.querySelector("#christeningCity").value;
+        selectedPerson.christeningState = document.querySelector("#christeningState").value;
+        selectedPerson.christeningCountry = document.querySelector("#christeningCountry").value;
+        selectedPerson.marriageDate = document.querySelector("#marriageDate").value;
+        selectedPerson.marriageCity = document.querySelector("#marriageCity").value;
+        selectedPerson.marriageState = document.querySelector("#marriageState").value;
+        selectedPerson.marriageCountry = document.querySelector("#marriageCountry").value;
+        selectedPerson.deathDate = document.querySelector("#deathDate").value;
+        selectedPerson.deathCity = document.querySelector("#deathCity").value;
+        selectedPerson.deathState = document.querySelector("#deathState").value;
+        selectedPerson.deathCountry = document.querySelector("#deathCountry").value;
+        selectedPerson.burialDate = document.querySelector("#burialDate").value;
+        selectedPerson.burialCity = document.querySelector("#burialCity").value;
+        selectedPerson.burialState = document.querySelector("#burialState").value;
+        selectedPerson.burialCountry = document.querySelector("#burialCountry").value;
     }
+    localStorage.setItem("people", JSON.stringify(people));
 });
 
 /* Sources: */

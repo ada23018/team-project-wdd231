@@ -44,6 +44,18 @@ async function displayPerson() {
 
     if (selectedPerson) {
 
+        let spouseName = "Unknown";
+
+        if (selectedPerson.spouseIds && selectedPerson.spouseIds.length > 0) {
+            const spousePerson = people.find(function(person) {
+                return person.id === selectedPerson.spouseIds[0];
+            });
+
+            if (spousePerson) {
+                spouseName = spousePerson.firstName + " " + spousePerson.lastName;
+            }
+        }
+
         const spouse = document.querySelector("#spouse");
 
         people.forEach(function(person) {
@@ -184,7 +196,17 @@ async function displayPerson() {
             <p>Gender: ${selectedPerson.gender}</p>
             <p>Status: ${selectedPerson.status}</p>
             <p>Birth Date: ${birthDate}</p>
-            <p>Birth Country: ${getCountryName(selectedPerson.birthCountry)}</p>
+            <p>Birth Place: ${selectedPerson.birthCity}, ${selectedPerson.birthState}, ${getCountryName(selectedPerson.birthCountry)}</p>
+            <p>Christening Date: ${selectedPerson.christeningDate}</p>
+            <p>Christening Place: ${selectedPerson.christeningCity}, ${selectedPerson.christeningState}, ${getCountryName(selectedPerson.christeningCountry)}</p>
+            <p>
+            <p>Spouse: ${spouseName}</p>
+            <p>Marriage Date: ${selectedPerson.marriageDate}</p>
+            <p>Marriage Place: ${selectedPerson.marriageCity}, ${selectedPerson.marriageState}, ${getCountryName(selectedPerson.marriageCountry)}</p>
+            <p>Death Date: ${selectedPerson.deathDate}</p>
+            <p>Death Place: ${selectedPerson.deathCity}, ${selectedPerson.deathState}, ${getCountryName(selectedPerson.deathCountry)}</p>
+            <p>Burial Date: ${selectedPerson.burialDate}</p>
+            <p>Burial Place: ${selectedPerson.burialCity}, ${selectedPerson.burialState}, ${getCountryName(selectedPerson.burialCountry)}</p>
         `;
     } else {
         personInformation.textContent = "Person not found.";

@@ -302,7 +302,69 @@ wifeChoice.addEventListener("change", function() {
 
         document.querySelector("#wife-birth-date").textContent = birthDate;
         document.querySelector("#wife-birth-country").textContent =
-            toTitleCase(selectedPerson.birthCountry);
+            selectedPerson.birthCity + ", " +
+            selectedPerson.birthState + ", " +
+        getCountryName(selectedPerson.birthCountry);
+
+        let christeningDate = "Unknown";
+
+        if (selectedPerson.christeningDate) {
+            const date = new Date(selectedPerson.christeningDate + "T00:00:00");
+
+            christeningDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+        document.querySelector("#wife-christening-date").textContent =
+            christeningDate;
+
+        document.querySelector("#wife-christening-place").textContent =
+            selectedPerson.christeningCity + ", " +
+            selectedPerson.christeningState + ", " +
+        getCountryName(selectedPerson.christeningCountry);
+
+        let deathDate = "Unknown";
+
+        if (selectedPerson.deathDate) {
+            const date = new Date(selectedPerson.deathDate + "T00:00:00");
+
+            deathDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+        
+        document.querySelector("#wife-death-date").textContent =
+            deathDate;
+
+        document.querySelector("#wife-death-place").textContent =
+            selectedPerson.deathCity + ", " +
+            selectedPerson.deathState + ", " +
+        getCountryName(selectedPerson.deathCountry);
+
+        let burialDate = "Unknown";
+
+        if (selectedPerson.burialDate) {
+            const date = new Date(selectedPerson.burialDate + "T00:00:00");
+
+            burialDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        } 
+
+        document.querySelector("#wife-burial-date").textContent =
+            burialDate;
+        document.querySelector("#wife-burial-place").textContent =
+            selectedPerson.burialCity + ", " +
+            selectedPerson.burialState + ", " +
+        getCountryName(selectedPerson.burialCountry);
+
     } else {
         wifeName.textContent = "";
         document.querySelector("#wife-birth-date").textContent = "";

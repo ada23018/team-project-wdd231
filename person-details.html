@@ -29,6 +29,8 @@
             <div id="person-information"></div>
             <form id="person-details-form">
                 
+                <h2>Edit Person</h2>
+                
                 <fieldset>
                     <legend>Personal Information</legend>
 
@@ -149,7 +151,22 @@
                         <option value="">Select a Country</option>
                     </select>
                 </fieldset>
-                <button id="submit-person">Submit Person</button>
+                <button type="submit" id="submit-person">Submit Person</button>
+
+                <div
+                    id="submit-message"
+                    class="submit-message"
+                    role="dialog"
+                    aria-labelledby="modal-title"
+                    aria-modal="true"
+                    aria-hidden="true"
+                >
+                <section id="modal-content">
+                    <button type="button" class="close-button" aria-label="Close modal">&times;</button>
+                    <h2 id="modal-title">Success!</h2>
+                    <p id="modal-description">Person submitted successfully!</p>
+                </section>
+                </div>
             </form>
         </section>
     </main>

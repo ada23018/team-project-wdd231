@@ -54,6 +54,9 @@ async function displayPerson() {
                 spouse.appendChild(option);
             }
         });
+        if (selectedPerson.spouseIds && selectedPerson.spouseIds.length > 0) {
+            spouse.value = selectedPerson.spouseIds[0];
+        }
 
         birthCountry.value = selectedPerson.birthCountry;
 
@@ -187,9 +190,13 @@ async function displayPerson() {
         personInformation.textContent = "Person not found.";
     }
 }
+
 displayPerson();
 
+const submitModal = document.querySelector("#submit-message");
+
 const personForm = document.querySelector("#person-details-form");
+
 personForm.addEventListener("submit", function(event) {
     event.preventDefault();
     if (selectedPerson) {
@@ -230,8 +237,64 @@ personForm.addEventListener("submit", function(event) {
         selectedPerson.burialCity = document.querySelector("#burialCity").value;
         selectedPerson.burialState = document.querySelector("#burialState").value;
         selectedPerson.burialCountry = document.querySelector("#burialCountry").value;
+
+        const spouseId = document.querySelector("#spouse").value;
+        let oldSpouseId = "";
+
+        if (selectedPerson.spouseIds && selectedPerson.spouseIds.length > 0) {
+            oldSpouseId = selectedPerson.spouseIds[0];
+        }
+        
+        const oldSpouse = people.find(function(person) {
+            return person.id === oldSpouseId;
+        });
+        
+        if (oldSpouse) {
+            oldSpouse.spouseIds = [];
+        }
+        
+        if (spouseId) {
+            selectedPerson.spouseIds = [spouseId];
+        } else {
+            selectedPerson.spouseIds = [];
+        }
+        
+        const spousePerson = people.find(function(person) {
+            return person.id === spouseId;
+        });
+        
+        if (spousePerson) {
+            if (!spousePerson.spouseIds) {
+                spousePerson.spouseIds = [];
+            }
+
+            if (!spousePerson.spouseIds.includes(selectedPerson.id)) {
+                spousePerson.spouseIds.push(selectedPerson.id);
+            }
+        }
+        
         localStorage.setItem("people", JSON.stringify(people));
+        submitModal.setAttribute("aria-hidden", "false");
+        submitModal.classList.add("show");
     }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        submitModal.classList.remove("show");
+        submitModal.setAttribute("aria-hidden", "true");
+    }
+});
+submitModal.addEventListener("click", function(event) {
+    if (event.target === submitModal) {
+        submitModal.classList.remove("show");
+        submitModal.setAttribute("aria-hidden", "true");
+    }
+});
+const closeButton = document.querySelector(".close-button");
+
+closeButton.addEventListener("click", function() {
+    submitModal.classList.remove("show");
+    submitModal.setAttribute("aria-hidden", "true");
 });
 
 /* Sources: */

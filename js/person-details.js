@@ -295,6 +295,7 @@ personForm.addEventListener("submit", function(event) {
         }
         
         localStorage.setItem("people", JSON.stringify(people));
+        displayPerson();
         submitModal.setAttribute("aria-hidden", "false");
         submitModal.classList.add("show");
     }

@@ -230,8 +230,8 @@ personForm.addEventListener("submit", function(event) {
         selectedPerson.burialCity = document.querySelector("#burialCity").value;
         selectedPerson.burialState = document.querySelector("#burialState").value;
         selectedPerson.burialCountry = document.querySelector("#burialCountry").value;
+        localStorage.setItem("people", JSON.stringify(people));
     }
-    localStorage.setItem("people", JSON.stringify(people));
 });
 
 /* Sources: */

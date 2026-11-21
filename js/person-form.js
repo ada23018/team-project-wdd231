@@ -1,3 +1,5 @@
+import { loadCountries, getCountries } from "./birth-countries.mjs";
+
 let countries = [];
 
 const searchInput = document.querySelector("#search-people");
@@ -218,10 +220,12 @@ function search() {
     displayPeople(filteredPeople);
 }
 
-async function loadCountries() {
-    const response = await fetch("data/birthCountries.json");
-    countries = await response.json();
+async function setupPeoplePage() {
+    await loadCountries();
+    
     const birthCountry = document.querySelector("#birthCountry");
+
+    const countries = getCountries();
 
     const options = countries.map(function(country) {
         const option = document.createElement("option");
@@ -240,7 +244,7 @@ async function loadCountries() {
     }
     displayPeople(people);
 }
-loadCountries();
+setupPeoplePage();
 
 function getCountryName(countryValue) {
     const country = countries.find(function(country) {

@@ -680,3 +680,9 @@ child2Choice.addEventListener("change", function() {
 });
 
 loadCountries();
+
+const printButton = document.querySelector("#print-record");
+
+printButton.addEventListener("click", function() {
+    window.print();
+});

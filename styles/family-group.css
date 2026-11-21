@@ -35,6 +35,7 @@ th, td {
     vertical-align: top;
     overflow-wrap: break-word;
 }
+
 .narrow-column {
     width: 4%;
 }
@@ -45,19 +46,45 @@ th, td {
 /* Print settings */
 @media print {
     body {
-        width: 100%;
         font-size: 9pt;
-
-
-    select {
-        border: none;
-        appearance: none;
-        background: transparent;
-        font: inherit;
+    }
+    .record-heading {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
     }
 
-    button {
+    #record-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        margin: 0;
+        padding: 0;
+    }
+
+    #record-info p {
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .record-heading h2 {
+        margin: 0;
+        white-space: nowrap;
+    }
+    header,
+    #print-record {
         display: none;
     }
-}
+    select,
+    label[for] {
+        display: none;
+    }
+    .empty-row {
+    height: 20px;
+    }
 }

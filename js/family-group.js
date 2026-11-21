@@ -52,7 +52,7 @@ function populateDropdown(dropdown) {
     people.forEach(function(person) {
         const option = document.createElement("option");
         option.value = person.id;
-        option.textContent =   `${person.firstName} ${person.lastName}`
+        option.textContent = `${person.firstName} ${person.lastName}`
         dropdown.appendChild(option);
     });
 }
@@ -131,26 +131,30 @@ husbandChoice.addEventListener("change", function() {
     if (selectedPerson) {
         husbandName.textContent =
             `${selectedPerson.firstName} ${selectedPerson.lastName}`;
-            let birthDate = "Unknown";
 
-            if (selectedPerson.birthMonth && selectedPerson.birthDay && selectedPerson.birthYear) {
-                const date = new Date(
-                    selectedPerson.birthYear,
-                    selectedPerson.birthMonth - 1,
-                    selectedPerson.birthDay
-                );
+        let birthDate = "Unknown";
 
-                birthDate = date.toLocaleDateString("en-GB", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric"
-                });
-            }
+        if (selectedPerson.birthMonth && selectedPerson.birthDay && selectedPerson.birthYear) {
+            const date = new Date(
+                selectedPerson.birthYear,
+                selectedPerson.birthMonth - 1,
+                selectedPerson.birthDay
+            );
+
+            birthDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
         document.querySelector("#husband-birth-date").textContent = birthDate;
+        
         document.querySelector("#husband-birth-country").textContent =
             selectedPerson.birthCity + ", " +
             selectedPerson.birthState + ", " +
-        getCountryName(selectedPerson.birthCountry);
+            getCountryName(selectedPerson.birthCountry);
+        
         let christeningDate = "Unknown";
 
         if (selectedPerson.christeningDate) {
@@ -162,14 +166,16 @@ husbandChoice.addEventListener("change", function() {
                 year: "numeric"
             });
         }
+
         document.querySelector("#husband-christening-date").textContent =
             christeningDate;
-        let marriageDate = "Unknown";
-
+        
         document.querySelector("#husband-christening-place").textContent =
             selectedPerson.christeningCity + ", " +
             selectedPerson.christeningState + ", " +
-        getCountryName(selectedPerson.christeningCountry);
+            getCountryName(selectedPerson.christeningCountry);
+        
+        let marriageDate = "Unknown";
         
         if (selectedPerson.marriageDate) {
             const date = new Date(selectedPerson.marriageDate + "T00:00:00");
@@ -183,10 +189,11 @@ husbandChoice.addEventListener("change", function() {
 
         document.querySelector("#husband-marriage-date").textContent =
             marriageDate;
+
         document.querySelector("#husband-marriage-place").textContent =
             selectedPerson.marriageCity + ", " +
             selectedPerson.marriageState + ", " +
-        getCountryName(selectedPerson.marriageCountry);
+            getCountryName(selectedPerson.marriageCountry);
 
         let deathDate = "Unknown";
 
@@ -202,12 +209,13 @@ husbandChoice.addEventListener("change", function() {
 
         document.querySelector("#husband-death-date").textContent =
             deathDate;
+
         let burialDate = "Unknown";
 
         document.querySelector("#husband-death-place").textContent =
             selectedPerson.deathCity + ", " +
             selectedPerson.deathState + ", " +
-        getCountryName(selectedPerson.deathCountry);
+            getCountryName(selectedPerson.deathCountry);
 
         if (selectedPerson.burialDate) {
             const date = new Date(selectedPerson.burialDate + "T00:00:00");
@@ -221,10 +229,11 @@ husbandChoice.addEventListener("change", function() {
 
         document.querySelector("#husband-burial-date").textContent =
             burialDate;
+
         document.querySelector("#husband-burial-place").textContent =
             selectedPerson.burialCity + ", " +
             selectedPerson.burialState + ", " +
-        getCountryName(selectedPerson.burialCountry);
+            getCountryName(selectedPerson.burialCountry);
 
     } else {
         husbandName.textContent = "";
@@ -318,7 +327,7 @@ wifeChoice.addEventListener("change", function() {
         document.querySelector("#wife-birth-country").textContent =
             selectedPerson.birthCity + ", " +
             selectedPerson.birthState + ", " +
-        getCountryName(selectedPerson.birthCountry);
+            getCountryName(selectedPerson.birthCountry);
 
         let christeningDate = "Unknown";
 
@@ -338,7 +347,7 @@ wifeChoice.addEventListener("change", function() {
         document.querySelector("#wife-christening-place").textContent =
             selectedPerson.christeningCity + ", " +
             selectedPerson.christeningState + ", " +
-        getCountryName(selectedPerson.christeningCountry);
+            getCountryName(selectedPerson.christeningCountry);
 
         let deathDate = "Unknown";
 
@@ -358,7 +367,7 @@ wifeChoice.addEventListener("change", function() {
         document.querySelector("#wife-death-place").textContent =
             selectedPerson.deathCity + ", " +
             selectedPerson.deathState + ", " +
-        getCountryName(selectedPerson.deathCountry);
+            getCountryName(selectedPerson.deathCountry);
 
         let burialDate = "Unknown";
 
@@ -377,7 +386,7 @@ wifeChoice.addEventListener("change", function() {
         document.querySelector("#wife-burial-place").textContent =
             selectedPerson.burialCity + ", " +
             selectedPerson.burialState + ", " +
-        getCountryName(selectedPerson.burialCountry);
+            getCountryName(selectedPerson.burialCountry);
 
     } else {
         wifeName.textContent = "";
@@ -406,15 +415,19 @@ child1Choice.addEventListener("change", function() {
     });
 
     const child1Name = document.querySelector("#child1-name");
+
     const child1Gender = document.querySelector("#child1-gender");
     if (selectedPerson) {
         child1Name.textContent =
             `${selectedPerson.firstName} ${selectedPerson.lastName}`;
-            if (selectedPerson.gender === "male") {
-                child1Gender.innerHTML = "☑ Male<br>☐ Female";
-            } else if (selectedPerson.gender === "female") {
-                child1Gender.innerHTML = "☐ Male<br>☑ Female";
-            }
+
+        if (selectedPerson.gender === "male") {
+            child1Gender.innerHTML = "☑ Male<br>☐ Female";
+        } else if (selectedPerson.gender === "female") {
+            child1Gender.innerHTML = "☐ Male<br>☑ Female";
+        } else {
+            child1Gender.innerHTML = "☐ Male<br>☐ Female";
+        }
 
         let birthDate = "Unknown";
 
@@ -434,12 +447,99 @@ child1Choice.addEventListener("change", function() {
 
         document.querySelector("#child1-birth-date").textContent = birthDate;
         document.querySelector("#child1-birth-country").textContent =
-            toTitleCase(selectedPerson.birthCountry);
+            selectedPerson.birthCity + ", " +
+            selectedPerson.birthState + ", " +
+            getCountryName(selectedPerson.birthCountry);
+        
+        let christeningDate = "Unknown";
+
+        if (selectedPerson.christeningDate) {
+            const date = new Date(selectedPerson.christeningDate + "T00:00:00");
+
+            christeningDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+        document.querySelector("#child1-christening-date").textContent =
+            christeningDate;
+        
+        document.querySelector("#child1-christening-place").textContent =
+            selectedPerson.christeningCity + ", " +
+            selectedPerson.christeningState + ", " +
+            getCountryName(selectedPerson.christeningCountry);
+
+        let marriageDate = "Unknown";
+
+        if (selectedPerson.marriageDate) {
+            const date = new Date(selectedPerson.marriageDate + "T00:00:00");
+
+            marriageDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+        document.querySelector("#child1-marriage-date").textContent =
+            marriageDate;
+
+        document.querySelector("#child1-marriage-place").textContent =
+            selectedPerson.marriageCity + ", " +
+            selectedPerson.marriageState + ", " +
+            getCountryName(selectedPerson.marriageCountry);
+
+        if (selectedPerson.spouseIds && selectedPerson.spouseIds.length > 0) {
+            const spouse = people.find(function(person) {
+                return person.id === selectedPerson.spouseIds[0];
+            });
+
+            if (spouse) {
+                document.querySelector("#child1-spouse").textContent =
+                    `${spouse.firstName} ${spouse.lastName}`;
+            } else {
+                document.querySelector("#child1-spouse").textContent = "";
+            }
+        } else {
+            document.querySelector("#child1-spouse").textContent = "";
+        }
+
+
+        let deathDate = "Unknown";
+
+        if (selectedPerson.deathDate) {
+            const date = new Date(selectedPerson.deathDate + "T00:00:00");
+
+            deathDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+        document.querySelector("#child1-death-date").textContent =
+            deathDate;
+
+        document.querySelector("#child1-death-place").textContent =
+            selectedPerson.deathCity + ", " +
+            selectedPerson.deathState + ", " +
+            getCountryName(selectedPerson.deathCountry);
+
+
     } else {
         child1Name.textContent = "";
         document.querySelector("#child1-birth-date").textContent = "";
         document.querySelector("#child1-birth-country").textContent = "";
         child1Gender.innerHTML = "☐ Male<br>☐ Female";
+        document.querySelector("#child1-christening-date").textContent = "";
+        document.querySelector("#child1-christening-place").textContent = "";
+        document.querySelector("#child1-marriage-date").textContent = "";
+        document.querySelector("#child1-marriage-place").textContent = "";
+        document.querySelector("#child1-death-date").textContent = "";
+        document.querySelector("#child1-death-place").textContent = "";
+        document.querySelector("#child1-spouse").textContent = "";
     }
 });
 
@@ -451,15 +551,19 @@ child2Choice.addEventListener("change", function() {
     });
 
     const child2Name = document.querySelector("#child2-name");
+    
     const child2Gender = document.querySelector("#child2-gender");
+    
     if (selectedPerson) {
         child2Name.textContent =
             `${selectedPerson.firstName} ${selectedPerson.lastName}`;
-            if (selectedPerson.gender === "male") {
-                child2Gender.innerHTML = "☑ Male<br>☐ Female";
-            } else if (selectedPerson.gender === "female") {
-                child2Gender.innerHTML = "☐ Male<br>☑ Female";
-            }
+        if (selectedPerson.gender === "male") {
+            child2Gender.innerHTML = "☑ Male<br>☐ Female";
+        } else if (selectedPerson.gender === "female") {
+            child2Gender.innerHTML = "☐ Male<br>☑ Female";
+        } else {
+            child2Gender.innerHTML = "☐ Male<br>☐ Female";
+        }
 
         let birthDate = "Unknown";
 
@@ -479,12 +583,99 @@ child2Choice.addEventListener("change", function() {
 
         document.querySelector("#child2-birth-date").textContent = birthDate;
         document.querySelector("#child2-birth-country").textContent =
-            toTitleCase(selectedPerson.birthCountry);
+            selectedPerson.birthCity + ", " +
+            selectedPerson.birthState + ", " +
+            getCountryName(selectedPerson.birthCountry);
+        
+        let christeningDate = "Unknown";
+
+        if (selectedPerson.christeningDate) {
+            const date = new Date(selectedPerson.christeningDate + "T00:00:00");
+
+            christeningDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+        document.querySelector("#child2-christening-date").textContent =
+            christeningDate;
+        
+        document.querySelector("#child2-christening-place").textContent =
+            selectedPerson.christeningCity + ", " +
+            selectedPerson.christeningState + ", " +
+            getCountryName(selectedPerson.christeningCountry);
+
+        let marriageDate = "Unknown";
+
+        if (selectedPerson.marriageDate) {
+            const date = new Date(selectedPerson.marriageDate + "T00:00:00");
+
+            marriageDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+        document.querySelector("#child2-marriage-date").textContent =
+            marriageDate;
+
+        document.querySelector("#child2-marriage-place").textContent =
+            selectedPerson.marriageCity + ", " +
+            selectedPerson.marriageState + ", " +
+            getCountryName(selectedPerson.marriageCountry);
+
+        if (selectedPerson.spouseIds && selectedPerson.spouseIds.length > 0) {
+            const spouse = people.find(function(person) {
+                return person.id === selectedPerson.spouseIds[0];
+            });
+
+            if (spouse) {
+                document.querySelector("#child2-spouse").textContent =
+                    `${spouse.firstName} ${spouse.lastName}`;
+            } else {
+                document.querySelector("#child2-spouse").textContent = "";
+            }
+        } else {
+            document.querySelector("#child2-spouse").textContent = "";
+        }
+
+
+        let deathDate = "Unknown";
+
+        if (selectedPerson.deathDate) {
+            const date = new Date(selectedPerson.deathDate + "T00:00:00");
+
+            deathDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+        document.querySelector("#child2-death-date").textContent =
+            deathDate;
+
+        document.querySelector("#child2-death-place").textContent =
+            selectedPerson.deathCity + ", " +
+            selectedPerson.deathState + ", " +
+            getCountryName(selectedPerson.deathCountry);
+
+
     } else {
         child2Name.textContent = "";
         document.querySelector("#child2-birth-date").textContent = "";
         document.querySelector("#child2-birth-country").textContent = "";
         child2Gender.innerHTML = "☐ Male<br>☐ Female";
+        document.querySelector("#child2-christening-date").textContent = "";
+        document.querySelector("#child2-christening-place").textContent = "";
+        document.querySelector("#child2-marriage-date").textContent = "";
+        document.querySelector("#child2-marriage-place").textContent = "";
+        document.querySelector("#child2-death-date").textContent = "";
+        document.querySelector("#child2-death-place").textContent = "";
+        document.querySelector("#child2-spouse").textContent = "";
     }
 });
 
